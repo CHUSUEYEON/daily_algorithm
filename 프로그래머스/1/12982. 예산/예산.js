@@ -1,5 +1,12 @@
 function solution(d, budget) {
-    return d.sort((a, b) => a - b).reduce((count, price) => {
-        return count + ((budget -= price) >= 0);
-    }, 0);
+    let answer = 0;
+    let money = 0;
+    d.sort((a,b) => a-b).forEach(function(val){
+        money += val;
+        if(money <= budget){
+            answer++;    
+        }
+
+    })
+    return answer;
 }
