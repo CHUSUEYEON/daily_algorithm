@@ -9,7 +9,8 @@ let input = [];
 rl.on('line', function (line) {
     input = line.split(' ');
 }).on('close', function () {
-    str1 = input[0];
-    str2 = input[1];
-    console.log(str1 + str2)
+    // str1 = input[0];
+    // str2 = input[1];
+    // console.log(str1 + str2)
+    console.log(input.join(""))
 });
