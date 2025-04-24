@@ -12,7 +12,7 @@ class Solution {
         map.put(6, 1);
         map.put(0, 6);
 
-        Set<Integer> set = new HashSet<>();
+        int count = 0;
         int cnt = 0;
         for(int l : lottos){
             if(l == 0) cnt++;
@@ -20,13 +20,13 @@ class Solution {
         
         for(int w : win_nums){
             for(int i = 0; i < 6; i++){
-                if(lottos[i] == w) set.add(w);
+                if(lottos[i] == w) count++;
             }
         }
         //System.out.println(set);
 
-        int high = set.size() + cnt;
-        int low = set.size();
+        int high = count + cnt;
+        int low = count;
         int highScore = map.get(high);
         int lowScore = map.get(low);
         
