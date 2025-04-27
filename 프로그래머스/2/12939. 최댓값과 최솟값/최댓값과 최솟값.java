@@ -2,19 +2,17 @@ import java.util.*;
 
 class Solution {
     public String solution(String s) {
+        int min, max, n;
         String[] str = s.split(" ");
-        int[] arr = new int[str.length];
         
-        int idx = 0;
+        min = max = Integer.parseInt(str[0]);
+        
         for(String st : str){
-            arr[idx++] = Integer.parseInt(st);
+            n = Integer.parseInt(st);
+            if(min > n) min = n;
+            if(max < n) max = n;
         }
         
-        Arrays.sort(arr);
-        StringBuilder sb = new StringBuilder();
-        sb.append(arr[0]).append(" ").append(arr[arr.length-1]);
-        
-        
-        return sb.toString();
+        return min + " " + max;
     }
 }
